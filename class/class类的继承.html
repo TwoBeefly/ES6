@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //父类
+        class Phone{
+            //构造方法
+            constructor(brand,price){
+                this.brand = brand
+                this.price = price
+            }
+            //父类的成员属性
+            call(){
+                console.log("打电话");
+            }
+        }
+
+        //子类继承父类的方法
+        class SmartPhone extends Phone{
+            //构造方法
+            constructor(brand,price,color,size){
+                //使用supper调用父类的方法
+                super(brand,price)   //相当于Phone.call(this,brand,price)
+                this.color = color
+                this.price = price
+            }
+            //子类的方法
+            shopping(){
+                console.log("京东，淘宝");
+            }
+            music(){
+                console.log("网易云");
+            }
+        }
+        const xiaomi = new SmartPhone('小米',2500,'黑色','4.7inch');
+        console.log(xiaomi);
+    </script>
+</body>
+</html>
