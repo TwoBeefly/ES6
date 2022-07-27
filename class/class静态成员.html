@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //属于类的属性或方法，不能被实例化对象所调用的称之为静态成员
+        function plus() {
+            console.log("一个加法函数");
+        }
+        plus.prototype.add = function (a,b) {
+            return a+b
+        }
+        plus.name = 'pjc'
+        const p1 = new plus();
+        console.log(p1.name);
+        p1.add(1,2)
+
+        class Phone{
+            //静态属性
+            static name = '手机'
+            static change(){
+                console.log("静态方法");
+            }
+        }
+        const huawei = new Phone()
+        console.log(huawei.name);
+        console.log(Phone.name);
+    </script>
+</body>
+</html>
