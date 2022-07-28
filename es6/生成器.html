@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //生成器其实就是一个特殊的函数
+        //yield可以看作函数代码的分隔符
+        function *gen(arg) {
+            console.log(arg);
+            let one = yield '农批'
+            console.log(one);
+            let two = yield '原批'
+            console.log(two);
+            let three = yield '舟批'
+            console.log(three);
+        }
+        //执行获取迭代器对象
+        let iterator = gen('你是什么批')
+        console.log(iterator.next());
+        //next方法可以传入实参
+        console.log(iterator.next('我不是农批'));
+        console.log(iterator.next('我是原批'));
+        console.log(iterator.next('我是舟批'));
+        //遍历
+        for (const g of gen()) {
+            console.log(g);
+        }
+
+    </script>
+</body>
+</html>
