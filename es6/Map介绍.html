@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //声明Map
+        let m = new Map()
+        //添加元素
+        m.set('键值',"键名")
+        m.set('键值1',()=>{
+            console.log("键名为一个方法");
+        })
+        const ob = {
+            now:'键值可以是对象'
+        }
+        m.set(ob,['键名可以是数组'])
+        console.log(m);
+        //元素个数
+        console.log(m.size);
+        //删除元素
+        m.delete('键值')
+        console.log(m);
+        //获取
+        console.log(m.get('键值1'));
+        console.log(m.get(ob));
+        //清空
+        //m.clear()
+        //遍历，采用fot...of...循环,每个元素用数组返回
+        for (const v of m) {
+            console.log(v);
+        }
+    </script>
+</body>
+</html>
